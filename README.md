@@ -36,4 +36,4 @@ To do: generate template
 2) Priority Pruning with LIFE-Adult data (individual level data)
 
 
-test
+test juhu2

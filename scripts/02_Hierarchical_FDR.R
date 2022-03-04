@@ -52,91 +52,6 @@ HierFDR_Holger = function(data){
   return(x1)
 } 
 
-HierFDR_TreeQTL = function(data,myFDR_short,setting,fn_in,fn_out){
-  # data = pQTLs_a
-  # myFDR_short = myFDR_short
-  # setting = "combined"
-  # fn_in = "../results/01_pQTLs_all_cis.txt"
-  # fn_out = "../results/01_pQTLs_all_cis_pAssoc_TreeQTL.txt"
-  
-  data2 = copy(data)
-  fdr2 = copy(myFDR_short)
-  
-  myNames5 = c("FDRl2","SimesP","Sig","NSig")
-  if(setting == "combined"){
-    myNames5 = paste0(myNames5,"_a")
-  }else if(setting == "males"){
-    myNames5 = paste0(myNames5,"_m")
-  }else if(setting == "females"){
-    myNames5 = paste0(myNames5,"_f")
-  }
-  myNames6 = c("category",myNames5)
-  colsOut<-setdiff(colnames(fdr2),myNames6)
-  fdr2[,get("colsOut"):=NULL]
-  setcolorder(fdr2,myNames6)
-  myNames7<-c("category","FDRl2","SimesP","Sig","NSig")
-  names(fdr2) = myNames7
-  fdr2
-  
-  # Prep data
-  myTest_snps<-data2[,.N,variant_id_hg19]
-  names(myTest_snps)<-c("family","n_tests")
-  myTest_gene<-data2[,.N,gene]
-  names(myTest_gene)<-c("family","n_tests")
-  
-  #' Get associated genes
-  data_gene_BH<- get_eGenes(n_tests_per_gene = myTest_gene, 
-                            m_eqtl_out = fn_in,
-                            method="BH",
-                            level1 = 0.05, 
-                            level2 = 0.05, 
-                            slice_size = 1e+05,
-                            silent = FALSE, 
-                            gene_pvals = NA)
-  
-  data_gene_BH2<-get_eAssociations(eDiscoveries = data_gene_BH, 
-                                   n_tests = myTest_gene, 
-                                   m_eqtl_out = fn_in, 
-                                   out_file = fn_out,
-                                   by_snp = FALSE,
-                                   slice_size = 1e+05,
-                                   silent = FALSE)
-  
-  head(data_gene_BH2)
-  setDT(data_gene_BH)
-  head(data_gene_BH)
-  
-  #' Check 1: are the same genes noted as significant? --> Yes :)
-  stopifnot(is.element(data_gene_BH$family,fdr2[Sig==T,category]))
-  stopifnot(data_gene_BH$family==fdr2[Sig==T,category])
-  message("Check 1 - passed; the same genes are significant")
-  
-  #' Check 2: are the same number of SNPs significant? --> Yes :)
-  stopifnot(data_gene_BH$n_sel==fdr2[Sig==T,NSig])
-  message("Check 2 - passed; the same number of SNPs are significant")
-  
-  #' Check 3: are the Simes p-Values the same? --> Yes :)
-  stopifnot(signif(data_gene_BH$fam_p,6)==signif(fdr2[Sig==T,SimesP],6))
-  message("Check 3 - passed; Simes p-Values per gene are the same")
-  
-  #' Check 4: are the SNPs associated?
-  data_gene_BH2[,dumID:=paste(gene,SNP,sep="::")]
-  data2[,dumID:=paste(gene,variant_id_hg38,sep="::")]
-  
-  stopifnot(is.element(data2[hierarch_fdr5proz==T,dumID],data_gene_BH2[,dumID]))
-  stopifnot(is.element(data_gene_BH2[,dumID],data2[hierarch_fdr5proz==T,dumID]))
-  message("Check 4 - passed; the same SNP-gene pairs are associated")
-  
-  matched<-match(data2[,dumID],data_gene_BH2[,dumID])
-  data_gene_BH2<-data_gene_BH2[matched,]
-  #stopifnot(data_gene_BH2$dumID == data2$dumID)
-  data2[,BBFDR:=data_gene_BH2$BBFDR]
-  data2[,dumID:=NULL]
-  
-  return(data2)
-  
-}
-
 #' # Load Olink data hg38 ####
 #' ***
 pQTLs_a = fread("../exampleData/pQTLs_combined_hg38.txt.gz")
@@ -217,13 +132,13 @@ head(myTab)
 
 #' # Save ####
 #' ***
-save(myTab,file="../temp/01_OlinkGenes.RData")
-write.table(myFDR_short,file="../results/01_pQTLs_sigGenes.txt",
+save(myTab,file="../temp/02_OlinkGenes.RData")
+write.table(myFDR_short,file="../results/02_pQTLs_sigGenes.txt",
             col.names = T,row.names = F, quote = F, sep="\t",dec = ",")
 
-save(pQTLs_a,file="../results/01_pQTLs_all_cis.RData")
-save(pQTLs_m,file="../results/01_pQTLs_males_cis.RData")
-save(pQTLs_f,file="../results/01_pQTLs_females_cis.RData")
+save(pQTLs_a,file="../results/02_pQTLs_all_cis.RData")
+save(pQTLs_m,file="../results/02_pQTLs_males_cis.RData")
+save(pQTLs_f,file="../results/02_pQTLs_females_cis.RData")
 
 #' # SessionInfo
 #' ***

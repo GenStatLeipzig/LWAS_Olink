@@ -46,3 +46,4 @@ helperfunctions/*
 scripts/*.html
 scripts/*.out
 temp/harmonize/*
+results/*

@@ -34,3 +34,6 @@ To do: generate template
 
 1) Plink Calls to generate association statistics (individual level data)
 2) Priority Pruning with LIFE-Adult data (individual level data)
+
+
+test

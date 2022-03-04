@@ -18,24 +18,18 @@ You will need to customize a source file, including
 * Path to Phyton and Conda 
 * Path to MetaXcan (github repro)
 * Path to summary-gwas-imputation (github repro)
-* tbc
+* all relevant R packages
 
 To do: generate template
 
-# Included
+# Included (tbc)
 
 1) Harmonization calls to lift from hg19 to hg38
 2) Hierarchical FDR for combined, males and females
-3) Priority Pruning with 1000 Genomes data (EUR only)
-4) Lead SNPs: sex-interaction test
-5) Lead SNPs: comparison with effect on gene expression (GTEx v8 data)
+3) Lead SNPs: sex-interaction test
+4) Lead SNPs: comparison with effect on gene expression (GTEx v8 data)
 
 # Not included (reason)
 
 1) Plink Calls to generate association statistics (individual level data)
 2) Priority Pruning with LIFE-Adult data (individual level data)
-
-
-test juhu2
-huhu4
-

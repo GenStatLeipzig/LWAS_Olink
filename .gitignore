@@ -37,3 +37,12 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# other stuff
+myToDolist.txt
+mySourceFile.R
+data/*
+helperfunctions/*
+scripts/*.html
+scripts/*.out
+temp/harmonize/*

@@ -48,3 +48,5 @@ scripts/*.out
 temp/harmonize/*
 results/*
 temp/*.RData
+temp/GTEx_v8_filtered/*
+temp/GTEx_v8_matched_best/*

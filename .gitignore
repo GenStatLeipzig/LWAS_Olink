@@ -50,3 +50,4 @@ results/*
 temp/*.RData
 temp/GTEx_v8_filtered/*
 temp/GTEx_v8_matched_best/*
+temp/PLINK_LD/*

@@ -74,6 +74,8 @@ leadpQTLs3 = rbind(leadpQTLs3,dummy)
 leadpQTLs<-rbind(leadpQTLs1,leadpQTLs2,leadpQTLs3)
 leadpQTLs[,dumID:=paste(variant_id_hg38,gene,sep="__")]
 
+save(leadpQTLs, file="../results/03_leadSNPs.RData")
+
 #' # Look-up all lead SNPs in other settings ####
 #' ***
 mySNPs<-unique(leadpQTLs$variant_id_hg38)

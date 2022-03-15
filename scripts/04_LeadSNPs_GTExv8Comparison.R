@@ -452,6 +452,42 @@ tiff(filename = "../results/04_ScatterPlot_GEvsPE.tif",
 myPlot2
 dev.off()
 
+#' # Update myTab ###
+#' ****
+#' Merge meta data of GTEx onto myTab
+leadpQTLs_GTEx = copy(leadpQTLs4)
+leadpQTLs_GTEx <- leadpQTLs_GTEx[!grepl("LIFE",tissue_GTEx) & pval_GTEx<0.05,]
+
+x1<-leadpQTLs_GTEx[setting =="combined",.N,by=c("gene")]
+x2<-leadpQTLs_GTEx[setting =="combined" & same_direction==T,.N,by=c("gene")]
+x3<-leadpQTLs_GTEx[setting =="combined" & same_direction==F,.N,by=c("gene")]
+
+head(myTab)
+filt1<-is.element(myTab$Gene,x1$gene)
+matched2<-match(myTab$Gene,x2$gene)
+matched3<-match(myTab$Gene,x3$gene)
+myTab[,n_sig_eQTLs_sameDir:=x2[matched2,N]]
+myTab[,n_sig_eQTLs_diffDir:=x3[matched3,N]]
+myTab[filt1 & is.na(n_sig_eQTLs_sameDir),n_sig_eQTLs_sameDir:=0]
+myTab[filt1 & is.na(n_sig_eQTLs_diffDir),n_sig_eQTLs_diffDir:=0]
+
+dummy<-myTab[,n_sig_eQTLs_diffDir/(n_sig_eQTLs_sameDir + n_sig_eQTLs_diffDir)]
+hist(dummy, breaks=20)
+filt2<-dummy>0.8 & !is.na(dummy)
+myTab[filt2,]
+
+#' Merge meta data of LIFE onto myTab
+leadpQTLs_LIFE = copy(leadpQTLs4)
+leadpQTLs_LIFE <- leadpQTLs_LIFE[grepl("LIFE",tissue_GTEx) & pval_GTEx<0.05,]
+x4<-leadpQTLs_LIFE[setting =="combined" & same_direction==F,.N,by=c("gene")]
+myTab[,n_sig_eQTLs_diffDir_LIFE:=NA]
+myTab[GE_ok=="yes" & GWAS_sig==T,n_sig_eQTLs_diffDir_LIFE:=F]
+myTab[Gene %in% x4$gene,n_sig_eQTLs_diffDir_LIFE:=T]
+myTab[filt2 & n_sig_eQTLs_diffDir_LIFE==T,]
+
+#' Save myTab
+save(myTab,file="../temp/04_OlinkGenes.RData")
+
 #' # sessioninfo ####
 #' ***
 sessionInfo()

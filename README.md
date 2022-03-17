@@ -19,6 +19,8 @@ You will need to customize a source file, including
 * Path to MetaXcan (github repro)
 * Path to summary-gwas-imputation (github repro)
 * all relevant R packages
+* Path to [GTEx v8 Data](https://gtexportal.org/home/protectedDataAccess)
+* Path to CAD statistics [van der Harst et al.](https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.117.312086?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed), [summary statistics](https://data.mendeley.com/datasets/gbbsrpx6bs/1)
 
 To do: generate template
 
@@ -39,3 +41,4 @@ To do: generate template
 
 1) Plink Calls to generate association statistics (individual level data)
 2) Priority Pruning with LIFE-Adult data (individual level data)
+3) Annotation Pipeline (not yet published from GenStatLeipzig Group)

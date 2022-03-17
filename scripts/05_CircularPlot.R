@@ -53,9 +53,9 @@ myTab[,top_eQTL_tissue:=data_besteQTL_top$tissue[matched1]]
 matched2<-match(myTab$Gene,leadpQTLs$gene)
 myTab[,leadSNP:=leadpQTLs$variant_id_hg38[matched2]]
 
-myTab<-myTab[GWAS_sig==T]
-head(myTab)
-table(is.na(myTab$top_eQTL_tissue))
+# myTab<-myTab[GWAS_sig==T]
+# head(myTab)
+# table(is.na(myTab$top_eQTL_tissue))
 
 #' # Search for novel findings ####
 #' ***
@@ -89,9 +89,13 @@ table(is.element(genes_known,genes_novel))
 table(is.element(myTab$Gene,genes_known),is.element(myTab$Gene,genes_novel))
 
 myTab[,novel:="maybe"]
+myTab[GWAS_sig==F & GWAS_sig_male==F & GWAS_sig_female==F,novel:=NA]
 myTab[Gene %in% genes_known,novel:="no"]
 myTab[Gene %in% genes_novel,novel:="yes"]
 table(myTab$novel)
+
+myTab2 = copy(myTab)
+myTab2 = myTab2[GWAS_sig == T,]
 
 #' ## Parameter setting ####
 #' 
@@ -135,9 +139,9 @@ dumTab<-foreach(i=1:length(topTissues))%do%{
   #dumTab<-foreach(i=1:5)%do%{
   #i=1
   myTissue<-topTissues[i]
-  myPhenos<-myTab[top_eQTL_tissue==myTissue,Parameter]
-  myGenes<-myTab[top_eQTL_tissue==myTissue,Gene]
-  myCytos<-myTab[top_eQTL_tissue==myTissue,Cytoband]
+  myPhenos<-myTab2[top_eQTL_tissue==myTissue,Parameter]
+  myGenes<-myTab2[top_eQTL_tissue==myTissue,Gene]
+  myCytos<-myTab2[top_eQTL_tissue==myTissue,Cytoband]
   
   message("Working on ",myTissue, " (",i," of ",length(topTissues),")")
   
@@ -195,8 +199,8 @@ eQTLs[,logp:=-log10(pval)]
 plotData = data.table(myID = unique(c(pQTLs[,myID], eQTLs[,myID])))
 matched1 = match(plotData[,myID], pQTLs[,myID])
 matched2 = match(plotData[,myID], eQTLs[,myID])
-matched3 = match(myTab[,leadSNP],leadpQTLs$variant_id_hg38)
-myTab[,myID:=leadpQTLs[matched3,paste(chr,pos_hg38,sep=":")]]
+matched3 = match(myTab2[,leadSNP],leadpQTLs$variant_id_hg38)
+myTab2[,myID:=leadpQTLs[matched3,paste(chr,pos_hg38,sep=":")]]
 
 #' basic plot data object
 plotData[,chr:=pmax(pQTLs[matched1, chr], eQTLs[matched2, chr], na.rm=T)]
@@ -219,7 +223,7 @@ e.max = eQTLs[,.SD[pval==min(pval)],by=.(myID)]
 
 matched1 = match(plotData[,myID], p.max$myID)
 matched2 = match(plotData[,myID], e.max$myID)
-matched3 = match(plotData[,myID], myTab$myID)
+matched3 = match(plotData[,myID], myTab2$myID)
 table(is.na(matched3))
 
 plotData[,pQTL:=0]
@@ -227,13 +231,13 @@ plotData[,pQTL:=p.max$logp[matched1]]
 plotData[,eQTL:=0]
 plotData[,eQTL:=e.max$logp[matched2]]
 plotData[,Protein:=""]
-plotData[,Protein:=myTab$Parameter[matched3]]
+plotData[,Protein:=myTab2$Parameter[matched3]]
 plotData[,Gene:=""]
-plotData[,Gene:=myTab$Gene[matched3]]
+plotData[,Gene:=myTab2$Gene[matched3]]
 plotData[,Cyto:=""]
-plotData[,Cyto:=myTab$Cytoband[matched3]]
+plotData[,Cyto:=myTab2$Cytoband[matched3]]
 plotData[,novel:=""]
-plotData[,novel:=myTab$novel[matched3]]
+plotData[,novel:=myTab2$novel[matched3]]
 
 table(is.na(plotData[,pQTL]), is.na(plotData[,eQTL]))
 table(is.na(plotData[,pQTL]), is.na(plotData[,novel]))

@@ -28,7 +28,7 @@ setwd(projectpath_main)
 
 #' # Prep ####
 #' ***
-myTab<-data.table(read_excel("../temp/OlinkGenes.xlsx"))
+myTab<-fread("../temp/OlinkGenes.txt")
 head(myTab)
 
 todofiles = data.table(setting = c("combined","females","males"),

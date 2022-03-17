@@ -24,8 +24,6 @@ source("../mySourceFile.R")
 .libPaths()
 setwd(projectpath_main)
 
-require(toolboxH)
-
 #' # Prep ####
 #' ***
 myTab<-fread("../temp/OlinkGenes.txt")

@@ -25,8 +25,28 @@ You will need to customize a source file, indicating
 
 # Included (tbc)
 
-1\) Harmonization calls to lift from hg19 to hg38 2) Hierarchical FDR for combined, males and females 3) Lead SNPs: sex-interaction test --\> **Figure S4** 4) Lead SNPs: comparison with effect on gene expression (GTEx v8 data) --\> **Figure 2** 5) Circular Plot --\> **Figure 1** 6) Locus level: Co-localization of pQTLs and eQTLs (GTEx v8 data) --\> **Figure S6** 7) Locus level: Correlation of protein levels and genetically regulated gene expression using MetaXcan 8) Causal analyses: Test causality of gene expression on protein levels 9) Causal analyses: Test causality of protein levels on CAD (van der Haarst data) --\> **Figure S8** 10) Causal analyses: Test mediating effect of protein levels on GE-CAD relation
+1) Harmonization calls to lift from hg19 to hg38 
+2) Hierarchical FDR for combined, males and females 
+3) Lead SNPs: sex-interaction test --> **Figure S4** 
+4) Lead SNPs: comparison with effect on gene expression (GTEx v8 data) --> **Figure 2** 
+5) Circular Plot --> **Figure 1** 
+6) Locus level: Co-localization of pQTLs and eQTLs (GTEx v8 data) --> **Figure S6** 
+7) Locus level: Correlation of protein levels and genetically regulated gene expression using MetaXcan 
+8) Causal analyses: Test causality of gene expression on protein levels 
+9) Causal analyses: Test causality of protein levels on CAD (van der Haarst data) --> **Figure S8** 
+10) Causal analyses: Test mediating effect of protein levels on GE-CAD relation
+11) Overview of all tissue-specific results (combined setting only)
+12) **Main Tables** & **Figure 3**
+13) **Supplemental Tables**
+14) **Figures S5 and S7**
 
 # Not included (reason)
 
-1\) Plink Calls to generate association statistics (individual level data) 2) Priority Pruning with LIFE-Adult data (individual level data) 3) Annotation Pipeline (not yet published from GenStatLeipzig Group) 4) Figures: \* Figure 4: DAGs MR Mediation (generated in PowerPoint, based on Table S12) \* Figure S1: Sample Overview (individual level data) \* Figure S2: Flowchart of Analysis Plan (generated in PowerPoint) \* Figure S3: Genetic PC Plot (individual level data)
+1) Plink Calls to generate association statistics (individual level data) 
+2) Priority Pruning with LIFE-Adult data (individual level data) 
+3) Annotation Pipeline (not yet published from GenStatLeipzig Group) 
+4) Figures: 
+    * Figure 4: DAGs MR Mediation (generated in PowerPoint, based on Table S12) 
+    * Figure S1: Sample Overview (individual level data) 
+    * Figure S2: Flowchart of Analysis Plan (generated in PowerPoint) 
+    * Figure S3: Genetic PC Plot (individual level data)

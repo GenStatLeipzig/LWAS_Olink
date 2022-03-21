@@ -30,6 +30,7 @@ suppressPackageStartupMessages(library(ComplexHeatmap))
 library(gridBase)
 suppressPackageStartupMessages(library(corrplot))
 library(RColorBrewer)
+library(WriteXLS)
 
 #############################
 # Other Tools 

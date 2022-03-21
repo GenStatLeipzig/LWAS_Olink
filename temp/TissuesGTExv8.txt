@@ -1,0 +1,50 @@
+Original_Name	Abbreviation
+Adipose_Subcutaneous	Adipose Sub
+Adipose_Visceral_Omentum	Adipose Vis
+Adrenal_Gland	Adrenal Gland
+Artery_Aorta	Artery A
+Artery_Coronary	Artery C
+Artery_Tibial	Artery T
+Brain_Amygdala	Brain Amy
+Brain_Anterior_cingulate_cortex_BA24	Brain Ant 
+Brain_Caudate_basal_ganglia	Brain Caud
+Brain_Cerebellar_Hemisphere	Brain CH
+Brain_Cerebellum	Brain Cere 
+Brain_Cortex	Brain Cort 
+Brain_Frontal_Cortex_BA9	Brain FC
+Brain_Hippocampus	Brain Hippo
+Brain_Hypothalamus	Brain Hypo
+Brain_Nucleus_accumbens_basal_ganglia	Brain Nuc
+Brain_Putamen_basal_ganglia	Brain Put
+Brain_Spinal_cord_cervical_c-1	Brain SCC
+Brain_Substantia_nigra	Brain SN
+Breast_Mammary_Tissue	Breast MT
+Cells_Cultured_fibroblasts	Cells fibro
+Cells_EBV-transformed_lymphocytes	Cells lympho
+Colon_Sigmoid	Colon Sig
+Colon_Transverse	Colon Trans
+Esophagus_Gastroesophageal_Junction	Esophagus GJ
+Esophagus_Mucosa	Esophagus Muc
+Esophagus_Muscularis	Esophagus Mus
+Heart_Atrial_Appendage	Heart AA
+Heart_Left_Ventricle	Heart LV
+Kidney_Cortex	Kidney Cort
+Liver	Liver
+Lung	Lung
+Minor_Salivary_Gland	MS Gland
+Muscle_Skeletal	Muscle Skel
+Nerve_Tibial	Nerve T
+Ovary	Ovary
+Pancreas	Pancreas
+Pituitary	Pituitary
+Prostate	Prostate
+Skin_Not_Sun_Exposed_Suprapubic	Skin NoSun
+Skin_Sun_Exposed_Lower_leg	Skin Sun
+Small_Intestine_Terminal_Ileum	Small Intestine
+Spleen	Spleen
+Stomach	Stomach
+Testis	Testis
+Thyroid	Thyroid
+Uterus	Uterus
+Vagina	Vagina
+Whole_Blood	Whole Blood

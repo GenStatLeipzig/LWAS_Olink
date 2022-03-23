@@ -1,0 +1,54 @@
+## R version 4.1.0 (2021-05-18)
+## Platform: x86_64-suse-linux-gnu (64-bit)
+## Running under: openSUSE Leap 15.3
+## 
+## Matrix products: default
+## BLAS:   /usr/lib64/R/lib/libRblas.so
+## LAPACK: /usr/lib64/R/lib/libRlapack.so
+## 
+## locale:
+##  [1] LC_CTYPE=de_DE.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=de_DE.UTF-8        LC_COLLATE=de_DE.UTF-8    
+##  [5] LC_MONETARY=de_DE.UTF-8    LC_MESSAGES=de_DE.UTF-8   
+##  [7] LC_PAPER=de_DE.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=de_DE.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] grid      parallel  stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] WriteXLS_6.3.0        corrplot_0.92         gridBase_0.4-7       
+##  [4] ComplexHeatmap_2.10.0 circlize_0.4.13       coloc_5.1.0          
+##  [7] toolboxH_0.2.15       eulerr_6.1.1          testthat_3.1.1       
+## [10] stringr_1.4.0         scales_1.1.1          RColorBrewer_1.1-2   
+## [13] png_0.1-7             fdrtool_1.2.17        R.utils_2.11.0       
+## [16] R.oo_1.24.0           R.methodsS3_1.8.1     plyr_1.8.6           
+## [19] ggrepel_0.9.1         ggplot2_3.3.5         reticulate_1.22      
+## [22] doMC_1.3.7            iterators_1.0.13      foreach_1.5.1        
+## [25] readxl_1.3.1          data.table_1.14.2    
+## 
+## loaded via a namespace (and not attached):
+##  [1] viridis_0.6.2       sass_0.4.0          jsonlite_1.7.2     
+##  [4] viridisLite_0.4.0   bslib_0.3.1         assertthat_0.2.1   
+##  [7] mixsqp_0.3-43       highr_0.9           stats4_4.1.0       
+## [10] cellranger_1.1.0    yaml_2.2.1          pillar_1.6.4       
+## [13] lattice_0.20-45     glue_1.6.0          digest_0.6.29      
+## [16] polyclip_1.10-0     colorspace_2.0-2    susieR_0.11.92     
+## [19] htmltools_0.5.2     Matrix_1.4-0        pkgconfig_2.0.3    
+## [22] GetoptLong_1.0.5    purrr_0.3.4         tibble_3.1.6       
+## [25] farver_2.1.0        generics_0.1.1      IRanges_2.28.0     
+## [28] ellipsis_0.3.2      withr_2.4.3         BiocGenerics_0.40.0
+## [31] magrittr_2.0.1      crayon_1.4.2        evaluate_0.14      
+## [34] fansi_1.0.0         doParallel_1.0.16   tools_4.1.0        
+## [37] GlobalOptions_0.1.2 lifecycle_1.0.1     matrixStats_0.61.0 
+## [40] S4Vectors_0.32.3    munsell_0.5.0       cluster_2.1.2      
+## [43] irlba_2.3.5         compiler_4.1.0      jquerylib_0.1.4    
+## [46] rlang_0.4.12        rjson_0.2.21        rmarkdown_2.11     
+## [49] gtable_0.3.0        codetools_0.2-18    DBI_1.1.2          
+## [52] reshape_0.8.8       R6_2.5.1            gridExtra_2.3      
+## [55] knitr_1.37          dplyr_1.0.7         fastmap_1.1.0      
+## [58] utf8_1.2.2          clue_0.3-60         polylabelr_0.2.0   
+## [61] shape_1.4.6         stringi_1.7.6       Rcpp_1.0.8         
+## [64] vctrs_0.3.8         tidyselect_1.1.1    xfun_0.29

@@ -2,8 +2,6 @@
 
 Scripts used in my Olink project (submitted to PLOS ONE - currently under revision)
 
-Here, I want to include all relevant R scripts used in the LWAS Olink project.
-
 Complete data sets including genetic data of LIFE-Adult participants cannot be made publicly available due to ethical and legal restrictions, as they are sufficient to identity study participants. This is not covered by the informed consent. However, access to the LIFE-Adult data is possible via project agreements addressed to:
 
 -   LIFE Research Center for Civilization Diseases, Medical Faculty, University of Leipzig, Leipzig, Germany
@@ -14,12 +12,12 @@ Complete data sets including genetic data of LIFE-Adult participants cannot be m
 
 You will need to customize a source file, indicating
 
--   path to R library (please use R Version 4.x, all necessary packages are listed in the source file)
--   path to Phyton and Conda
--   path to MetaXcan (github repro)
--   path to summary-gwas-imputation (github repro)
--   path to PLINK
--   path to 1000Genomes data
+-   path to R library (please use [R Version 4.x](https://cran.r-project.org/), all necessary packages are listed in the source file)
+-   path to Phyton and Conda (e.g. [Anaconda](https://www.anaconda.com/products/individual))
+-   path to [MetaXcan](https://github.com/hakyimlab/MetaXcan)
+-   path to [summary-gwas-imputation](https://github.com/hakyimlab/summary-gwas-imputation)
+-   path to [PLINK](https://www.cog-genomics.org/plink/2.0/)
+-   path to [1000 Genomes Phase 3 EUR data](https://www.internationalgenome.org/data-portal/data-collection/phase-3)
 -   path to [GTEx v8 Data](https://gtexportal.org/home/protectedDataAccess)
 -   path to CAD statistics [van der Harst et al.](https://www.ahajournals.org/doi/10.1161/CIRCRESAHA.117.312086?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed), [summary statistics](https://data.mendeley.com/datasets/gbbsrpx6bs/1)
 

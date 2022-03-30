@@ -53,3 +53,7 @@ temp/harmonize/*
 temp/PLINK_LD/*
 temp/tissuewise/*
 *.html
+scripts_Heart/*.html
+scripts_Heart/*.out
+results_Heart/*
+temp_Heart/*.RData

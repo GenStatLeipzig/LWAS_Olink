@@ -1,8 +1,8 @@
 # LWAS Olink
 
-Contributor: Janne Pott and Holger Kirsten
+**Contributor: Janne Pott and Holger Kirsten**
 
-Last Updated: 03/31/2022
+**Last Updated: 03/31/2022**
 
 Supporting code for the following paper:
 

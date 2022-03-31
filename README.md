@@ -1,12 +1,13 @@
 # LWAS Olink
 
-Scripts used in my Olink project (submitted to PLOS ONE - currently under revision)
+We are providing the main scripts used in the locus-wide association study (LWAS) of Olink proteins in LIFE-Adult, to empower other researchers to reproduce our results, starting from the summary statistics (for protein ~ SNP, gene expression ~ SNP and protein ~ gene expression associations in LIFE). These data are intended for research purposes only. The corresponding manuscript "Genetically regulated gene expression and proteins revealed discordant effects" of Janne Pott, Tarcyane Garcia, Stephanie M. Hauck et al. is submitted to PLOS ONE and currently under revision. 
 
 Complete data sets including genetic data of LIFE-Adult participants cannot be made publicly available due to ethical and legal restrictions, as they are sufficient to identity study participants. This is not covered by the informed consent. However, access to the LIFE-Adult data is possible via project agreements addressed to:
 
 -   LIFE Research Center for Civilization Diseases, Medical Faculty, University of Leipzig, Leipzig, Germany
 -   E-mail: [info\@life.uni-leipzig.de](mailto:info@life.uni-leipzig.de)
 -   Homepage: <https://www.uniklinikum-leipzig.de/einrichtungen/life/kontakt> (currently only available in German)
+
 
 # Source File
 

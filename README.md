@@ -6,7 +6,7 @@
 
 Supporting code for the following paper:
 
-* J. Pott, T. Garcia, S. M. Hauck, A. Petrera, K. Wirkner, M. Loeffler, H. Kirsten, A. Peters, and M. Scholz, Genetically regulated gene expression and proteins revealed discordant effects. Submitted to PLOS ONE (currently under revision). 
+* Pott J, Garcia T, Hauck SM, Petrera A, Wirkner K, Loeffler M, et al. (2022) Genetically regulated gene expression and proteins revealed discordant effects. PLoS ONE 17(5): e0268815. https://doi.org/10.1371/journal.pone.0268815
 
 We are providing the main scripts used in the locus-wide association study (LWAS) of Olink proteins in LIFE-Adult, to empower other researchers to reproduce our results, starting from the summary statistics (for protein ~ SNP, gene expression ~ SNP and protein ~ gene expression associations in LIFE). 
 
